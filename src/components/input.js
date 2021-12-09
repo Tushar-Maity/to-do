@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { saveTodos } from '../features/todoSlice';
 
 const Input = () => {
 
     const [input, setInput] = useState('');
+    const dispatch = useDispatch();
 
     const addTodo = (e) => {
-
+        console.log('adding a todo!');
+        dispatch(saveTodos({
+            item: input,
+            done: false,
+            id: Date.now()
+        }))
+        // setInput('');
     }
     return (
         <InputContainer>
@@ -31,6 +40,7 @@ const InputContainer = styled.div`
     align-items: center;
     justify-content: center;
     padding: 5px;
+    margin-bottom: 25px;
 `;
 
 const InputField = styled.input`
