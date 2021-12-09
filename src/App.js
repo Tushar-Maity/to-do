@@ -1,14 +1,25 @@
 import React from 'react';
 import GlobalStyle from './components/GlobalStyle';
+import Input from './components/Input';
+import styled from 'styled-components';
 // import { Counter } from './features/counter/Counter';
 
 function App() {
   return (
-    <div className="App">
+    <AppContainer>
       <GlobalStyle />
-      <h1>hey i am going to make a to do app.</h1>
-    </div>
+      <Input />
+    </AppContainer>
   );
 }
+
+const AppContainer = styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #EC255A;
+  padding: 40px;
+`;
 
 export default App;
