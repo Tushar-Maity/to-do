@@ -3,31 +3,16 @@ import GlobalStyle from './components/GlobalStyle';
 import Input from './components/Input';
 import styled from 'styled-components';
 import TodoItem from './components/TodoItem';
-
-const todoList = [
-  {
-    item: 'this is a todo item',
-    done: false,
-    id: Math.random(),
-  },
-  {
-    item: 'this is a todo item2',
-    done: false,
-    id: Math.random(),
-  },
-  {
-    item: 'this is a todo item3',
-    done: true,
-    id: Math.random(),
-  }
-];
+import { useSelector } from 'react-redux';
+import { selectTodos } from './features/todoSlice';
 
 function App() {
+  const todos = useSelector(selectTodos);
   return (
     <AppContainer>
       <GlobalStyle />
       <Input />
-      {todoList.map(todo => <TodoItem key={todo.id} {...todo} />)}
+      {todos.map(todo => <TodoItem key={todo.id} {...todo} />)}
     </AppContainer>
   );
 }
