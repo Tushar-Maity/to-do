@@ -1,6 +1,6 @@
 import React from 'react';
 import GlobalStyle from './components/GlobalStyle';
-import Input from './components/Input';
+import Input from './components/input';
 import styled from 'styled-components';
 import TodoItem from './components/TodoItem';
 import { useSelector } from 'react-redux';
